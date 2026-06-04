@@ -54,6 +54,7 @@ const STEPS = ["Business", "Design", "Content", "Technical"];
 export default function OnboardingForm() {
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState<FormData>({
     businessName: "",
     contactName: "",
@@ -92,12 +93,22 @@ export default function OnboardingForm() {
   }
 
   async function handleSubmit() {
-    const res = await fetch("/api/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-    if (res.ok) setSubmitted(true);
+    setError("");
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await res.json();
+        setError(JSON.stringify(data));
+      }
+    } catch (e) {
+      setError(String(e));
+    }
   }
 
   if (submitted) {
@@ -301,6 +312,9 @@ export default function OnboardingForm() {
           </>
         )}
 
+        {error && (
+          <p className="text-sm text-red-400 bg-red-950/40 border border-red-900/50 rounded-lg px-4 py-2">{error}</p>
+        )}
         {/* Navigation */}
         <div className="flex justify-between pt-2">
           {step > 0 ? (
