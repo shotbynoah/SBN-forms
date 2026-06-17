@@ -59,11 +59,18 @@
     font-style: italic;
   }
   .sig-block { margin-top: 10px; }
-  table.sig-table { width: 90%; margin: 20px auto 0 auto; border-collapse: collapse; }
-  table.sig-table td { text-align: center; vertical-align: bottom; padding: 0 10px; }
-  .sig-line, .date-line {
+  .sig-item { text-align: center; margin-top: 20px; }
+  .sig-line {
     border-bottom: 1px solid #1a1a1a;
+    width: 60%;
     height: 20px;
+    margin: 0 auto;
+  }
+  .date-line {
+    border-bottom: 1px solid #1a1a1a;
+    width: 28%;
+    height: 18px;
+    margin: 10px auto 0 auto;
   }
   .sig-caption {
     font-family: Arial, 'Liberation Sans', sans-serif;
@@ -141,42 +148,18 @@
   <p style="text-align:center;">By signing below, both parties agree to the terms outlined in this Agreement.</p>
 
   <div class="sig-block">
-    <table class="sig-table">
-      <tr>
-        <td style="width:68%;">
-          <div class="sig-line">&nbsp;</div>
-          <div class="sig-caption">Photographer Signature — Noah Kissinger, SBN Media LLC</div>
-        </td>
-        <td style="width:32%;">
-          <div class="date-line">&nbsp;</div>
-          <div class="sig-caption">Date</div>
-        </td>
-      </tr>
-    </table>
-    <table class="sig-table">
-      <tr>
-        <td style="width:68%;">
-          <div class="sig-line">&nbsp;</div>
-          <div class="sig-caption">Client Signature — Chennel Johnson</div>
-        </td>
-        <td style="width:32%;">
-          <div class="date-line">&nbsp;</div>
-          <div class="sig-caption">Date</div>
-        </td>
-      </tr>
-    </table>
-    <table class="sig-table">
-      <tr>
-        <td style="width:68%;">
-          <div class="sig-line">&nbsp;</div>
-          <div class="sig-caption">Client Signature — Kevin</div>
-        </td>
-        <td style="width:32%;">
-          <div class="date-line">&nbsp;</div>
-          <div class="sig-caption">Date</div>
-        </td>
-      </tr>
-    </table>
+    <div class="sig-item">
+      <div class="sig-line">&nbsp;</div>
+      <div class="sig-caption">Photographer Signature — Noah Kissinger, SBN Media LLC</div>
+      <div class="date-line">&nbsp;</div>
+      <div class="sig-caption">Date</div>
+    </div>
+    <div class="sig-item">
+      <div class="sig-line">&nbsp;</div>
+      <div class="sig-caption">Client Signature — Chennel Johnson (for both Clients)</div>
+      <div class="date-line">&nbsp;</div>
+      <div class="sig-caption">Date</div>
+    </div>
   </div>
 
   <p class="footer">SBN Media LLC &nbsp;·&nbsp; Elopement Photography Agreement &nbsp;·&nbsp; Arroyo Grande, CA &nbsp;·&nbsp; July 31, 2026</p>
